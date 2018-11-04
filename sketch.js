@@ -13,6 +13,8 @@ function setup() {
   capture.size(640, 480);
   capture.hide();
 
+  frameRate(60);
+
 
 
 
@@ -29,8 +31,9 @@ function draw() {
   image(myImage, x, y, x * 2, y * 3);
 
 
-  filter(POSTERIZE, 2);
+  filter(POSTERIZE, 4);
   filter(GRAY);
+  filter(ERODE);
 
   for (var v = x; v < x * 3; v += sizeChar - 5) {
     for (var t = y; t < y * 4; t += sizeChar - 5) {
